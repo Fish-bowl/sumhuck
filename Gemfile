@@ -7,7 +7,6 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rack-cors'
-gem 'paperclip'
 gem 'omniauth'
 gem 'devise_token_auth'
 group :development, :test do

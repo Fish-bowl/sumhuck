@@ -3,6 +3,7 @@ import Cards from './Cards'
 import {
   Header,
   Container,
+  Divider,
   Segment,
   Card,
   Grid,
@@ -36,12 +37,11 @@ class Home extends Component {
                 >
                   SumHuck
                 </Header>
+              <Divider />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={4}>
-             <Card.Group>
               <Cards />
-             </Card.Group>
             </Grid.Row>
           </Grid>
         </Container>
