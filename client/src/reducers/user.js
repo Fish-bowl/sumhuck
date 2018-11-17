@@ -3,6 +3,7 @@ import axios from 'axios';
 import { setFlash } from './flash';
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
+const USER = 'USER'
 
 export const login = (user) => {
   return { type: LOGIN, user };
@@ -10,6 +11,15 @@ export const login = (user) => {
 
 const logout = () => {
   return { type: LOGOUT };
+}
+
+export const updateUser = (id, user) => {
+  return (dispatch) => {
+    let data = new FormData()
+    data.append('file', user.file)
+    axios.put(`/api/users/${id}?name=${user.name}&email=${user.email}`, data)
+      .then(res => dispatch({ type: USER, user: res.data }))
+  }
 }
 
 export const registerUser = (user, history) => {
@@ -75,8 +85,9 @@ export default (state = {}, action) => {
     return action.user;
     case LOGOUT:
     return {};
+    case USER:
+      return action.user;
     default:
     return state;
   }
 };
-

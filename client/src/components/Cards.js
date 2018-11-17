@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
 import {
   Card,
   Image,
@@ -12,29 +13,44 @@ import flyingHoffPNG from '../images/flyingHoff.png'
 
 class Cards extends React.Component {
   
-  state = { images: [], }
-  
-  imageCollection = [
-    {
+  state = {
+    images: [
+      {
       location: 'Japan',
       desc: 'sakura trees brah',
       src: isthisPNG,
-    },
-    {
-      location: 'the sky',
-      desc: 'the hoff man',
-      src: flyingHoffPNG
-    },
-  ]
-
-  componentDidMount(imageCollection) {
-    this.setState({images: this.imageCollection})
+      id: 1,
+      },
+      {
+        location: 'the sky',
+        desc: 'the hoff man',
+        src: flyingHoffPNG,
+        id: 2
+      },
+    ], 
   }
+  
+  // imageCollection = [
+  //   {
+  //     location: 'Japan',
+  //     desc: 'sakura trees brah',
+  //     src: isthisPNG,
+  //   },
+  //   {
+  //     location: 'the sky',
+  //     desc: 'the hoff man',
+  //     src: flyingHoffPNG
+  //   },
+  // ]
 
-  makeCards = (imageCollection) => {
+  // componentDidMount(imageCollection) {
+  //   this.setState({images: this.imageCollection})
+  // }
+
+  makeCards = (state) => {
     return this.state.images.map((image => {
       return (
-        <Card>
+        <Card key={image.id}>
           <Image alt={image.desc} src={image.src} />
           <Card.Content>
             <Card.Header>{image.location}</Card.Header>
@@ -56,5 +72,8 @@ class Cards extends React.Component {
   
 }
 
+const mapStateToProps = (state) => {
+  return { images: state.images}
+}
 
-export default Cards
+export default connect(mapStateToProps)(Cards)

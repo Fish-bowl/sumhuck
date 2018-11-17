@@ -1,21 +1,27 @@
 import React from 'react'
-import axios from 'axios'
-import NavBar from './NavBar'
+// import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import {
-  Card,
   Container,
   Segment,
   Header,
-  Grid,
 } from 'semantic-ui-react'
 
 class Gallery extends React.Component {
+  state = { gallery: [], }
+
   render() {
     return (
-      <Grid>
-        <Grid.Column width={4} >
-        </Grid.Column>
-      </Grid>
+      <Container>
+        this is gallery
+      {/* <CloudinaryContext cloudName="defmethod">
+          <Image publicId="better_vw.jpg" >
+            <Transformation height="150" width="150" crop="fill" radius="20" />
+          </Image>
+          <Image publicId="gallery_images/dolph_vw.jpg" >
+            <Transformation height="150" width="150" crop="fill" radius="20" />
+          </Image>
+        </CloudinaryContext> */}
+      </Container>
     )
   }
 }

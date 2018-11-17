@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary-react": "^1.0.6",
+    "global": "^4.3.2",
+    "react-dropzone": "^7.0.1"
+  }
 }
