@@ -82,7 +82,7 @@ class AddPhotos extends React.Component {
             onDrop={this.onDrop}
             multiple={false}
           >
-            {file && <Image src={file.preview} />}
+            {file && <Image src={this.file.preview} />}
           </Dropzone>
         </Grid.Column>
         <Grid.Column width={8}>

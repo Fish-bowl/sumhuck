@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cards from './Cards'
+import SlideShow from './SlideShow'
 import {
   Header,
   Container,
@@ -28,6 +29,7 @@ class Home extends Component {
       <div style={styles.container} >
         <Container>
           <Grid centered >
+            <SlideShow />
             <Grid.Row columns={1} >
               <Grid.Column stretched width={16} style={styles.column} >
                 <Header 

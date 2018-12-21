@@ -7,8 +7,8 @@ import {
   Segment,
   Header,
 } from 'semantic-ui-react'
-import isthisPNG from '../images/isthis.png'
 import flyingHoffPNG from '../images/flyingHoff.png'
+import isthisPNG from '../images/isthis.png'
 
 
 class Cards extends React.Component {
@@ -29,23 +29,6 @@ class Cards extends React.Component {
       },
     ], 
   }
-  
-  // imageCollection = [
-  //   {
-  //     location: 'Japan',
-  //     desc: 'sakura trees brah',
-  //     src: isthisPNG,
-  //   },
-  //   {
-  //     location: 'the sky',
-  //     desc: 'the hoff man',
-  //     src: flyingHoffPNG
-  //   },
-  // ]
-
-  // componentDidMount(imageCollection) {
-  //   this.setState({images: this.imageCollection})
-  // }
 
   makeCards = (state) => {
     return this.state.images.map((image => {
