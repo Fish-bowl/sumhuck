@@ -59,23 +59,23 @@
 //     ], 
 //   }
 
-//   getSlides = () => {
-//     const { publicId } = this.state
-//     return (
-//       publicId.map((pubId, i) => {
-//         return (
-//           <div style={styles.imageContainer} >
-//             <Image key={i} publicId={pubId} cloud_name='defmethod' >
-//               <Transformation
-//                 height="600"
-//                 width="600"
-//                 crop="fit"
-//               />
-//             </Image>
-//           </div>
-//         )
-//       }))
-//   }
+  // getSlides = () => {
+  //   const { publicId } = this.state
+  //   return (
+  //     publicId.map((pubId, i) => {
+  //       return (
+  //         <div style={styles.imageContainer} >
+  //           <Image key={i} publicId={pubId} cloud_name='defmethod' >
+  //             <Transformation
+  //               height="600"
+  //               width="600"
+  //               crop="fit"
+  //             />
+  //           </Image>
+  //         </div>
+  //       )
+  //     }))
+  // }
 
 //   render() {
 //     const settings = {
@@ -187,9 +187,9 @@ import React from 'react'
 import {
   Container,
   Segment,
+  Card,
   Header,
 } from 'semantic-ui-react'
-import Slider from 'react-slick'
 import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import cloudinary from 'cloudinary-core';
 const cloudinaryCore = new cloudinary.Cloudinary({ cloud_name: 'defmethod' });
@@ -245,30 +245,40 @@ class Gallery extends React.Component{
   }
 
   getImages = () => {
-    const {publicId} = this.state
-    return(
-      publicId.map((pubid, i) => {
-        return(
-          <Segment>
-            <Image key={i} cloud_name='def_method' publicId={pubid}>
-              <Transformation 
-                height='600px'
-                width='600px'
-                crop='fill'
-              />
-            </Image>
-          </Segment>
+    const { publicId } = this.state
+    return (
+      publicId.map((pubId, i) => {
+        return (
+          <Card style={{backgroundColor: '#373737', width: '500px'}}>
+              <Card.Content>
+                <Image key={i} publicId={pubId} cloud_name='defmethod' >
+                  <Transformation
+                    height="400"
+                    width="400"
+                    crop="fit"
+                  />
+                </Image>
+              </Card.Content>
+            </Card>
         )
-      })
-    )
+      }))
   }
+
   render(){
     return(
-      <Segment>
-        {this.getImages()}
-      </Segment>
+      <Container style={styles.container} >
+        <Card.Group itemsPerRow={2} stackable >
+          {this.getImages()}
+        </Card.Group>
+      </Container>
     )
   }
 }
 
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center' 
+  }
+}
 export default Gallery
