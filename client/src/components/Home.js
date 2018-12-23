@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Cards from './Cards'
-import SlideShow from './SlideShow'
+import Carousel from './Carousel'
+// import SlideShow from './SlideShow'
 import {
   Header,
   Container,
@@ -9,6 +10,31 @@ import {
   Card,
   Grid,
 } from 'semantic-ui-react';
+
+class Home extends React.Component {
+  render(){
+    return(
+      <Grid>
+        <Grid.Row columns={1} >
+          <Grid.Column stretched width={16} style={styles.column} >
+            <Header
+              as='h1'
+              color='black'
+              style={styles.header}
+            >
+              SumHuck
+            </Header>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row columns={1}>
+          <Grid.Column width={16}>
+            <Carousel />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    )
+  }
+}
 
 const styles = {
   container: {
@@ -23,33 +49,33 @@ const styles = {
   }
 }
 
-class Home extends Component {
-  render() {
-    return (
-      <div style={styles.container} >
-        <Container>
-          <Grid centered >
-            <SlideShow />
-            <Grid.Row columns={1} >
-              <Grid.Column stretched width={16} style={styles.column} >
-                <Header 
-                  as='h1' 
-                  color='black' 
-                  style={styles.header} 
-                >
-                  SumHuck
-                </Header>
-              <Divider />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row columns={4}>
-              <Cards />
-            </Grid.Row>
-          </Grid>
-        </Container>
-      </div>
-    );
-  }
-}
+// class Home extends Component {
+//   render() {
+//     return (
+//       <div style={styles.container} >
+//         <Container>
+//           <Grid centered >
+//             <SlideShow />
+            // <Grid.Row columns={1} >
+            //   <Grid.Column stretched width={16} style={styles.column} >
+            //     <Header 
+            //       as='h1' 
+            //       color='black' 
+            //       style={styles.header} 
+            //     >
+            //       SumHuck
+            //     </Header>
+            //   <Divider />
+            //   </Grid.Column>
+            // </Grid.Row>
+//             <Grid.Row columns={4}>
+//               <Cards />
+//             </Grid.Row>
+//           </Grid>
+//         </Container>
+//       </div>
+//     );
+//   }
+// }
 
 export default Home;
