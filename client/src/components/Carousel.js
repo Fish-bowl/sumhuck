@@ -9,7 +9,7 @@ import {
 } from 'semantic-ui-react'
 import cloudinary from 'cloudinary-core';
 const cloudinaryCore = new cloudinary.Cloudinary({ cloud_name: 'defmethod' });
-const Height = '80vh'
+
 
 class Carousel extends React.Component {
   state = {
@@ -66,9 +66,7 @@ class Carousel extends React.Component {
     const { publicId, currentIndex } = this.state
     return (
       publicId.map((pubId, i) => {
-        // debugger
         if (currentIndex === i)
-          // debugger
           return (
             <Image style={styles.image} key={i} publicId={pubId} cloud_name='defmethod' >
               {/* <Transformation
@@ -108,40 +106,47 @@ class Carousel extends React.Component {
     }))
   }
 
-  // playButton = () => {
-  //   const {currentIndex} = this.state
-    // setInterval(function() {
-    //   this.setState({currentIndex: currentIndex + 1})
-    // }, 10000)
-  // }
-  // playButton = () => {
-  //   const {currentIndex, playing} = this.state
-  //   if (playing === false)
-  //   this.interval = setInterval(() => {
-  //     this.setState({currentIndex: currentIndex +1})
-  //   }, 15000)
-  // }
-
-  // stopButton = () => {
-
-  // }
-
-  player = () => {
-    const { playing, currentIndex} = this.state
-    while (playing === true) {
-      setInterval()
-    }
+  // player = () => {
+  //   const { playing, currentIndex} = this.state
+    // do {
+    //   setInterval(() => {
+    //     this.setState({currentIndex: currentIndex +1})
+    //   }, 1000)
+    // }
+    // while (playing === true && currentIndex < 43)
+    // while (playing === true && currentIndex < 43) {
+    //   return(
+    //     setInterval(() => (
+    //       this.setState({currentIndex: currentIndex +1})
+    //     ), 1000)
+    //   )
+    // }
+    // if (playing === true) {
+      
+    //     setInterval(() => {
+    //       // debugger
+    //       return(
+    //         this.setState({currentIndex: currentIndex +1})
+    //       )
+    //     }, 1000)
+    // } else {
+    //   return(
+    //     currentIndex
+    //   )
+    // }
     // while (playing === true) {
     //   setInterval(function () {
     //       this.setState({ currentIndex: currentIndex++ })
     //       debugger
     //     }, 1000)
     // }
-  }
+  // }
 
-  handleClick = () => {
-    this.setState({playing: !this.state.playing})
-  }
+
+  // handleClick = () => {
+  //   this.setState({playing: !this.state.playing})
+  //   player()
+  // }
 
 
   // componentWillUnmount(
@@ -158,7 +163,7 @@ class Carousel extends React.Component {
           </Image> */}
           {this.getImages()}
         </CloudinaryContext>
-        <Button icon='play' active={playing} onClick={() => this.handleClick()}  />
+        {/* <Button icon='play' active={playing} onClick={() => player()}  /> */}
         <Segment style={styles.buttons} basic >
           <LeftArrow goToPrevSlide={this.goToPrevSlide} />
           <RightArrow goToNextSlide={this.goToNextSlide} />
@@ -173,7 +178,7 @@ class Carousel extends React.Component {
 
 const styles = {
   container: {
-    height: '180vh',
+    height: '100vh',
     width: '100%',
     backgroundColor: '#373737'
   },

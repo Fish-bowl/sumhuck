@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Cards from './Cards'
 import Carousel from './Carousel'
+import Homage from './Homage'
 // import SlideShow from './SlideShow'
 import {
   Header,
@@ -14,6 +15,7 @@ import {
 class Home extends React.Component {
   render(){
     return(
+
       <Grid>
         <Grid.Row columns={1} >
           <Grid.Column stretched width={16} style={styles.column} >
@@ -31,6 +33,11 @@ class Home extends React.Component {
             <Carousel />
           </Grid.Column>
         </Grid.Row>
+        <Grid.Row columns={1}>
+          <Grid.Column width={16}>
+            <Homage />
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     )
   }
@@ -46,6 +53,7 @@ const styles = {
   },
   header: {
     textAlign: 'center',
+    paddingTop: '20px',
   }
 }
 
